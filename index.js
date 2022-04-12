@@ -25,17 +25,29 @@ buttontom2.addEventListener("click", tom2Play)
 buttontom3.addEventListener("click", tom3Play);
 buttontom4.addEventListener("click", tom4Play)
 
+
+saveSounds=[];
 document.addEventListener('keydown', function(event) {
 
-    if(event.key === 'w') { crashPlay(); animate('w')}
-    if(event.key === 'a') { kickPlay(); animate('a')}
-    if(event.key === 's') { snarePlay(); animate('s')}
-    if(event.key === 'd') { tom1Play(); animate('d')}
-    if(event.key === 'j') { tom2Play(); animate('j')}
-    if(event.key === 'k') { tom3Play(); animate('k')}
-    if(event.key === 'l') { tom4Play(); animate('l')}
+    if(event.key === 'w') { crashPlay(); animate('w'); saveSounds.push(crashPlay);}
+    if(event.key === 'a') { kickPlay(); animate('a'); saveSounds.push(kickPlay);}
+    if(event.key === 's') { snarePlay(); animate('s');saveSounds.push(snarePlay);}
+    if(event.key === 'd') { tom1Play(); animate('d');saveSounds.push(tom1Play);}
+    if(event.key === 'j') { tom2Play(); animate('j');saveSounds.push(tom2Play);}
+    if(event.key === 'k') { tom3Play(); animate('k');saveSounds.push(tom3Play);}
+    if(event.key === 'l') { tom4Play(); animate('l');saveSounds.push(tom4Play);}
 });
 
+async function playBack(){
+    for (let i = 0; i < saveSounds.length; i++) {
+        saveSounds[i]()
+    await sleep(100)
+        }
+}
+function sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
+  
 function kickPlay(){
     kick.currentTime=0;
     kick.play();
