@@ -16,19 +16,40 @@ const buttontom2 = document.querySelector(".j.drum");
 const buttontom3 = document.querySelector(".k.drum");
 const buttontom4 = document.querySelector(".l.drum");
 
-// listeners
-buttonCrush.addEventListener("click", crashPlay)
-buttonKick.addEventListener("click", kickPlay)
-buttonSnare.addEventListener("click", snarePlay)
-buttontom1.addEventListener("click", tom1Play)
-buttontom2.addEventListener("click", tom2Play)
-buttontom3.addEventListener("click", tom3Play);
-buttontom4.addEventListener("click", tom4Play)
-
-
 saveSounds=[];
-document.addEventListener('keydown', function(event) {
+// listeners
+buttonCrush.addEventListener("click", function(){
+    crashPlay();
+    saveSounds.push(crashPlay);
+})
+buttonKick.addEventListener("click", function(){
+    kickPlay();
+    saveSounds.push(kickPlay);
+})
+buttonSnare.addEventListener("click", function(){
+    snarePlay();
+    saveSounds.push(snarePlay);
+})
+buttontom1.addEventListener("click", function(){
+    tom1Play();
+    saveSounds.push(tom1Play);
 
+})
+buttontom2.addEventListener("click", function(){
+    tom2Play();
+    saveSounds.push(tom2Play);
+})
+buttontom3.addEventListener("click", function(){
+    tom3Play();
+    saveSounds.push(tom3Play);
+})
+buttontom4.addEventListener("click", function(){
+    tom4Play();
+    saveSounds.push(tom4Play);
+})
+
+
+document.addEventListener('keydown', function(event) {
     if(event.key === 'w') { crashPlay(); animate('w'); saveSounds.push(crashPlay);}
     if(event.key === 'a') { kickPlay(); animate('a'); saveSounds.push(kickPlay);}
     if(event.key === 's') { snarePlay(); animate('s');saveSounds.push(snarePlay);}
