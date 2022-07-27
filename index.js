@@ -50,13 +50,13 @@ buttontom4.addEventListener("click", function(){
 
 
 document.addEventListener('keydown', function(event) {
-    if(event.key === 'w') { crashPlay(); animate('w'); saveSounds.push(crashPlay);}
-    if(event.key === 'a') { kickPlay(); animate('a'); saveSounds.push(kickPlay);}
-    if(event.key === 's') { snarePlay(); animate('s');saveSounds.push(snarePlay);}
-    if(event.key === 'd') { tom1Play(); animate('d');saveSounds.push(tom1Play);}
-    if(event.key === 'j') { tom2Play(); animate('j');saveSounds.push(tom2Play);}
-    if(event.key === 'k') { tom3Play(); animate('k');saveSounds.push(tom3Play);}
-    if(event.key === 'l') { tom4Play(); animate('l');saveSounds.push(tom4Play);}
+    if(event.key === 'w') { crashPlay(); animate('w'); saveSounds.push(crashPlay); }
+    if(event.key === 'a') { kickPlay(); animate('a'); saveSounds.push(kickPlay); }
+    if(event.key === 's') { snarePlay(); animate('s'); saveSounds.push(snarePlay); }
+    if(event.key === 'd') { tom1Play(); animate('d'); saveSounds.push(tom1Play); }
+    if(event.key === 'j') { tom2Play(); animate('j'); saveSounds.push(tom2Play); }
+    if(event.key === 'k') { tom3Play(); animate('k'); saveSounds.push(tom3Play); }
+    if(event.key === 'l') { tom4Play(); animate('l'); saveSounds.push(tom4Play); }
 });
 
 async function playBack(){
