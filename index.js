@@ -62,7 +62,7 @@ document.addEventListener('keydown', function(event) {
 async function playBack(){
     for (let i = 0; i < saveSounds.length; i++) {
         saveSounds[i]()
-    await sleep(100)
+    await sleep(200)
         }
 }
 function sleep (time) {
